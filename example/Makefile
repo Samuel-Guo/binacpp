@@ -23,7 +23,7 @@ libbinacpp_lib=${libbinacpp_dir}/lib
 
 %: %.cpp
 	@echo -n "\nMaking $@\n\n\n"
-	g++ -I$(libcurl_include) -I$(jsoncpp_include) -I$(libwebsockets_include) -I$(libbinacpp_include) \
+	g++ -g -I$(libcurl_include) -I$(jsoncpp_include) -I$(libwebsockets_include) -I$(libbinacpp_include) \
 	$@.cpp \
 	-L$(libcurl_lib) \
 	-L$(libwebsockets_lib) \

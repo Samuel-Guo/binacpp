@@ -34,16 +34,40 @@
       <Platform>x64</Platform>
     </ProjectConfiguration>
   </ItemGroup>
+  <ItemGroup>
+    <None Include="example\cacert.pem" />
+    <None Include="example\example.run.sh" />
+    <None Include="example\example_aggTrades" />
+    <None Include="example\example_aggTrades.run.sh" />
+    <None Include="example\example_depthCache" />
+    <None Include="example\example_depthCache.run.sh" />
+    <None Include="example\example_klines" />
+    <None Include="example\example_klines.run.sh" />
+    <None Include="example\example_template" />
+    <None Include="example\example_template.run.sh" />
+    <None Include="example\example_userStream" />
+    <None Include="example\example_userStream.run.sh" />
+    <None Include="example\Makefile" />
+    <None Include="example\run.template.sh" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="example\example.cpp" />
+    <ClCompile Include="example\example_aggTrades.cpp" />
+    <ClCompile Include="example\example_depthCache.cpp" />
+    <ClCompile Include="example\example_klines.cpp" />
+    <ClCompile Include="example\example_template.cpp" />
+    <ClCompile Include="example\example_userStream.cpp" />
+    <ClCompile Include="example\example_wapi.cpp" />
+  </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{2f3ca636-23df-4203-8375-0865042c6bbb}</ProjectGuid>
+    <ProjectGuid>{ac971ec4-fc2c-411f-83d2-fbdf71c362b8}</ProjectGuid>
     <Keyword>Linux</Keyword>
-    <RootNamespace>BinanceCPP1</RootNamespace>
+    <RootNamespace>BinaCppExample</RootNamespace>
     <MinimumVisualStudioVersion>15.0</MinimumVisualStudioVersion>
     <ApplicationType>Linux</ApplicationType>
     <ApplicationTypeRevision>1.0</ApplicationTypeRevision>
     <TargetLinuxPlatform>Generic</TargetLinuxPlatform>
     <LinuxProjectType>{FC1A4D80-50E9-41DA-9192-61C0DBAA00D2}</LinuxProjectType>
-    <ProjectName>libbinance</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'" Label="Configuration">
@@ -91,76 +115,38 @@
   <ImportGroup Label="Shared" />
   <ImportGroup Label="PropertySheets" />
   <PropertyGroup Label="UserMacros" />
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|ARM'">
-    <RemoteBuildCommandLine>cd src &amp;&amp; make</RemoteBuildCommandLine>
-    <RemoteProjectDir>$(RemoteRootDir)</RemoteProjectDir>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|ARM64'">
-    <RemoteBuildCommandLine>cd src &amp;&amp; make</RemoteBuildCommandLine>
-    <RemoteProjectDir>$(RemoteRootDir)</RemoteProjectDir>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
-    <RemoteBuildCommandLine>cd src &amp;&amp; make</RemoteBuildCommandLine>
-    <RemoteProjectDir>$(RemoteRootDir)</RemoteProjectDir>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x86'">
-    <RemoteBuildCommandLine>cd src &amp;&amp; make</RemoteBuildCommandLine>
-    <RemoteProjectDir>$(RemoteRootDir)</RemoteProjectDir>
-  </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">
-    <RemoteBuildCommandLine>cd src &amp;&amp; make</RemoteBuildCommandLine>
+    <RemoteBuildCommandLine>cd example &amp;&amp; make example</RemoteBuildCommandLine>
+    <RemoteProjectDir>$(RemoteRootDir)</RemoteProjectDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|ARM'">
+    <RemoteBuildCommandLine>cd example &amp;&amp; make example</RemoteBuildCommandLine>
     <RemoteProjectDir>$(RemoteRootDir)</RemoteProjectDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|ARM64'">
-    <RemoteBuildCommandLine>cd src &amp;&amp; make</RemoteBuildCommandLine>
+    <RemoteBuildCommandLine>cd example &amp;&amp; make example</RemoteBuildCommandLine>
+    <RemoteProjectDir>$(RemoteRootDir)</RemoteProjectDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|ARM64'">
+    <RemoteBuildCommandLine>cd example &amp;&amp; make example</RemoteBuildCommandLine>
     <RemoteProjectDir>$(RemoteRootDir)</RemoteProjectDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <RemoteBuildCommandLine>cd src &amp;&amp; make</RemoteBuildCommandLine>
+    <RemoteBuildCommandLine>cd example &amp;&amp; make example</RemoteBuildCommandLine>
+    <RemoteProjectDir>$(RemoteRootDir)</RemoteProjectDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <RemoteBuildCommandLine>cd example &amp;&amp; make example</RemoteBuildCommandLine>
     <RemoteProjectDir>$(RemoteRootDir)</RemoteProjectDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x86'">
-    <RemoteBuildCommandLine>cd src &amp;&amp; make</RemoteBuildCommandLine>
+    <RemoteBuildCommandLine>cd example &amp;&amp; make example</RemoteBuildCommandLine>
     <RemoteProjectDir>$(RemoteRootDir)</RemoteProjectDir>
   </PropertyGroup>
-  <ItemGroup>
-    <ClCompile Include="lib\jsoncpp-1.8.3\src\jsoncpp.cpp" />
-    <ClCompile Include="src\binacpp.cpp" />
-    <ClCompile Include="src\binacpp_logger.cpp" />
-    <ClCompile Include="src\binacpp_utils.cpp" />
-    <ClCompile Include="src\binacpp_websocket.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="lib\jsoncpp-1.8.3\include\json\json-forwards.h" />
-    <ClInclude Include="lib\jsoncpp-1.8.3\include\json\json.h" />
-    <ClInclude Include="lib\libbinacpp\include\binacpp.h" />
-    <ClInclude Include="lib\libwebsockets-2.4.0\include\libwebsockets.h" />
-    <ClInclude Include="lib\libwebsockets-2.4.0\include\lws-plugin-ssh.h" />
-    <ClInclude Include="lib\libwebsockets-2.4.0\include\lws_config.h" />
-    <ClInclude Include="src\binacpp.h" />
-    <ClInclude Include="src\binacpp_logger.h" />
-    <ClInclude Include="src\binacpp_utils.h" />
-    <ClInclude Include="src\binacpp_websocket.h" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="lib\libcurl-7.56.0\lib\libcurl.so.4" />
-    <None Include="lib\libcurl-7.56.0\lib\libcurl.so.4.5.0" />
-    <None Include="lib\libwebsockets-2.4.0\lib\libwebsockets.so.11" />
-    <None Include="src\Makefile" />
-  </ItemGroup>
-  <ItemGroup>
-    <Text Include="src\readme.txt" />
-  </ItemGroup>
-  <ItemGroup>
-    <Object Include="lib\libbinacpp\lib\binacpp_websocket.o" />
-    <Object Include="lib\libbinacpp\lib\jsoncpp.o" />
-  </ItemGroup>
-  <ItemGroup>
-    <Library Include="lib\libbinacpp\lib\libbinacpp.so" />
-    <Library Include="lib\libcurl-7.56.0\lib\libcurl.so" />
-    <Library Include="lib\libwebsockets-2.4.0\lib\libwebsockets.a" />
-    <Library Include="lib\libwebsockets-2.4.0\lib\libwebsockets.so" />
-  </ItemGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x86'">
+    <RemoteBuildCommandLine>cd example &amp;&amp; make example</RemoteBuildCommandLine>
+    <RemoteProjectDir>$(RemoteRootDir)</RemoteProjectDir>
+  </PropertyGroup>
   <ItemDefinitionGroup />
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets" />
